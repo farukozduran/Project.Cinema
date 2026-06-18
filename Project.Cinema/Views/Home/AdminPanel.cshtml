@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Admin Panel</h1>
+        <p class="text-muted">Film, seans ve duyuru işlemlerini buradan yönetebilirsiniz.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 text-center p-4">
+                <h4 class="fw-bold">Film Yönetimi</h4>
+                <p class="text-muted">Filmleri listele, ekle, düzenle ve sil.</p>
+                <a asp-controller="Movies" asp-action="Index" class="btn btn-dark">
+                    Filmlere Git
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 text-center p-4">
+                <h4 class="fw-bold">Seans Yönetimi</h4>
+                <p class="text-muted">Film seanslarını yönet.</p>
+                <a href="#" class="btn btn-outline-dark disabled">
+                    Yakında
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 text-center p-4">
+                <h4 class="fw-bold">Duyuru Yönetimi</h4>
+                <p class="text-muted">Sinema duyurularını yönet.</p>
+                <a href="#" class="btn btn-outline-dark disabled">
+                    Yakında
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

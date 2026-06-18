@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Cinema Booking";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card shadow-lg border-0 p-5 text-center" style="max-width: 600px; width: 100%; border-radius: 24px;">
+        <h1 class="fw-bold mb-3">Cinema Booking App</h1>
+        <p class="text-muted mb-5">
+            Film seanslarını görüntüleyin veya yönetim panelinden içerikleri düzenleyin.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3">
+            <a asp-controller="Home" asp-action="UserPanel" class="btn btn-dark btn-lg px-5">
+                User Girişi
+            </a>
+
+            <a asp-controller="Home" asp-action="AdminPanel" class="btn btn-outline-dark btn-lg px-5">
+                Admin Girişi
+            </a>
+        </div>
+    </div>
+</div>
