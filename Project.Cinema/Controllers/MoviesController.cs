@@ -43,6 +43,40 @@ namespace Project.Cinema.Controllers
             return new JsonResult("Film basariyla eklendi.");
         }
 
+        public JsonResult EditMovie(int id)
+        {
+            var movie = _context.Movies.Find(id);
+            if(movie is null)
+            {
+                return new JsonResult(null);
+            }
+
+            return new JsonResult(movie);
+        }
+
+        [HttpPost]
+        public JsonResult UpdateMovie(Movie movie)
+        {
+            var existingMovie = _context.Movies.Find(movie.MovieId);
+
+            if(existingMovie is null)
+            {
+                return new JsonResult("Film bulunamadi.");
+            }
+
+            existingMovie.MovieTitle = movie.MovieTitle;
+            existingMovie.Genre = movie.Genre;
+            existingMovie.Director = movie.Director;
+            existingMovie.Duration = movie.Duration;
+            existingMovie.Description = movie.Description;
+            existingMovie.ImageUrl = movie.ImageUrl;
+
+            _context.Movies.Update(existingMovie);
+            _context.SaveChanges();
+
+            return new JsonResult("Film başarıyla güncellendi.");
+        }
+
         [HttpPost]
         public JsonResult DeleteMovie(int id)
         {
