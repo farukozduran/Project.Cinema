@@ -35,28 +35,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="UserPanel">User Panel</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="AdminPanel">Admin Panel</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Movies" asp-action="Index">Filmler</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Sessions" asp-action="Index">Seanslar</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Announcements" asp-action="Index">Duyurular</a>
-                        </li>
-
-                        <li class="nav-item ms-lg-2">
-                            <a class="btn btn-cinema-primary btn-sm" asp-controller="Home" asp-action="UserPanel">
-                                Bilet Al
+                            <a class="btn btn-cinema-primary btn-sm" asp-controller="Home" asp-action="AdminLogin">
+                                Admin Girişi
                             </a>
                         </li>
                     </ul>
@@ -72,38 +52,28 @@
     <footer class="cinema-footer">
         <div class="container">
             <div class="row g-4 align-items-start">
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <h5 class="footer-logo">🎬 CineReserve</h5>
                     <p>
-                        AJAX ve jQuery ile geliştirilen film seans rezervasyon sistemi.
-                        Admin tarafında CRUD işlemleri, user tarafında bilet listesi mantığı bulunur.
+                        Film seanslarını görüntüleyebileceğiniz, admin tarafında ise AJAX/jQuery ile CRUD işlemleri yapabileceğiniz sinema rezervasyon sistemi.
                     </p>
                 </div>
 
                 <div class="col-md-3">
-                    <h6>Yönetim</h6>
-                    <a asp-controller="Movies" asp-action="Index">Film Yönetimi</a>
-                    <a asp-controller="Sessions" asp-action="Index">Seans Yönetimi</a>
-                    <a asp-controller="Announcements" asp-action="Index">Duyuru Yönetimi</a>
+                    <h6>Kullanıcı</h6>
+                    <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                    <a asp-controller="Home" asp-action="UserPanel">Seansları Görüntüle</a>
                 </div>
 
-                <div class="col-md-2">
-                    <h6>Paneller</h6>
-                    <a asp-controller="Home" asp-action="UserPanel">User Panel</a>
-                    <a asp-controller="Home" asp-action="AdminPanel">Admin Panel</a>
-                </div>
-
-                <div class="col-md-2">
-                    <h6>Proje</h6>
-                    <span>ASP.NET Core MVC</span>
-                    <span>AJAX / jQuery</span>
-                    <span>SQL Server</span>
+                <div class="col-md-3">
+                    <h6>Admin</h6>
+                    <a asp-controller="Home" asp-action="AdminLogin">Admin Girişi</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <span>&copy; 2026 CineReserve</span>
-                <span>Dark cinema theme</span>
+                <span>ASP.NET Core MVC AJAX/jQuery Project</span>
             </div>
         </div>
     </footer>

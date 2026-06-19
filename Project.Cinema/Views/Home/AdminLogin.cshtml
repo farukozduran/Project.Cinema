@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Admin Girişi";
+}
+
+<div class="container">
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="text-center mb-4">
+                <span class="welcome-icon">🔐</span>
+                <h1>Admin Girişi</h1>
+                <p class="text-muted">
+                    Yönetim paneline erişmek için giriş yapınız.
+                </p>
+            </div>
+
+            <form asp-controller="Home" asp-action="AdminLogin" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Kullanıcı Adı</label>
+                    <input type="text" name="username" class="form-control" placeholder="admin" />
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Şifre</label>
+                    <input type="password" name="password" class="form-control" placeholder="••••••••" />
+                </div>
+
+                <button type="submit" class="btn btn-cinema-primary w-100 py-2">
+                    Giriş Yap
+                </button>
+            </form>
+
+            <div class="text-center mt-3">
+                <a asp-controller="Home" asp-action="Index" class="text-muted">
+                    Ana sayfaya dön
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

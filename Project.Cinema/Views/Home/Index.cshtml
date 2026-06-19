@@ -2,37 +2,33 @@
     ViewData["Title"] = "Ana Sayfa";
 }
 
-<section class="cinema-hero">
+<section class="welcome-section">
     <div class="container">
-        <div class="hero-card">
-            <div class="hero-content">
-                <div class="hero-kicker">Cinema Booking System</div>
+        <div class="welcome-card text-center">
+            <span class="welcome-icon">🎬</span>
 
-                <h1 class="hero-title">
-                    Film seanslarını keşfet, bilet listeni oluştur.
-                </h1>
+            <p class="hero-kicker">CineReserve</p>
 
-                <p class="hero-text">
-                    CineReserve; film, seans ve duyuru yönetimi için hazırlanmış
-                    ASP.NET Core MVC, AJAX ve jQuery tabanlı modern bir sinema rezervasyon projesidir.
-                </p>
+            <h1 class="hero-title">
+                Sinema Seans Rezervasyon Sistemine Hoş Geldiniz
+            </h1>
 
-                <div class="d-flex flex-wrap gap-3 mt-4">
-                    <a asp-controller="Home" asp-action="UserPanel" class="btn btn-cinema-primary px-4 py-2">
-                        User Girişi
-                    </a>
+            <p class="hero-text mx-auto">
+                Güncel film seanslarını görüntüleyebilir, istediğiniz seansı bilet listenize ekleyebilirsiniz.
+                Admin panelinden ise film, seans ve duyuru kayıtları yönetilebilir.
+            </p>
 
-                    <a asp-controller="Home" asp-action="AdminPanel" class="btn btn-cinema-outline px-4 py-2">
-                        Admin Girişi
-                    </a>
-                </div>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+                <a asp-controller="Home" asp-action="UserPanel" class="btn btn-cinema-primary px-4 py-2">
+                    Seansları Görüntüle
+                </a>
+            </div>
 
-                <div class="d-flex flex-wrap gap-2 mt-4">
-                    <span class="stat-pill">AJAX CRUD</span>
-                    <span class="stat-pill">jQuery</span>
-                    <span class="stat-pill">SQL Server</span>
-                    <span class="stat-pill">Dark UI</span>
-                </div>
+            <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
+                <span class="stat-pill">Film Seansları</span>
+                <span class="stat-pill">Bilet Sayacı</span>
+                <span class="stat-pill">AJAX CRUD</span>
+                <span class="stat-pill">Admin Yönetimi</span>
             </div>
         </div>
     </div>

@@ -27,6 +27,7 @@ namespace Project.Cinema.Controllers
         }
 
         public IActionResult AdminLogin()
+        {
             return View();
         }
     }

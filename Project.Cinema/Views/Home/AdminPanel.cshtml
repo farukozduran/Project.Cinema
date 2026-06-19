@@ -1,51 +1,45 @@
 ﻿@{
     ViewData["Title"] = "Admin Panel";
+    Layout = "_AdminLayout";
 }
 
-<div class="container">
-    <div class="page-head">
-        <h1>Admin Panel</h1>
-        <p>Film, seans ve duyuru kayıtlarını AJAX/jQuery ile yönetin.</p>
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="cinema-card">
+            <span class="stat-pill mb-3">Film CRUD</span>
+            <h3>Film Yönetimi</h3>
+            <p class="text-muted">
+                Film kayıtlarını AJAX ile ekleyebilir, düzenleyebilir ve silebilirsin.
+            </p>
+            <a asp-controller="Movies" asp-action="Index" class="btn btn-cinema-primary mt-3">
+                Filmlere Git
+            </a>
+        </div>
     </div>
 
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="cinema-card">
-                <span class="stat-pill mb-3">Film CRUD</span>
-                <h3>Film Yönetimi</h3>
-                <p class="text-muted">
-                    Filmleri listele, yeni film ekle, düzenle ve sil.
-                </p>
-                <a asp-controller="Movies" asp-action="Index" class="btn btn-cinema-primary mt-3">
-                    Filmlere Git
-                </a>
-            </div>
+    <div class="col-md-4">
+        <div class="cinema-card">
+            <span class="stat-pill mb-3">Seans CRUD</span>
+            <h3>Seans Yönetimi</h3>
+            <p class="text-muted">
+                Film seanslarını, salonları, tarihleri ve bilet fiyatlarını yönet.
+            </p>
+            <a asp-controller="Sessions" asp-action="Index" class="btn btn-cinema-primary mt-3">
+                Seanslara Git
+            </a>
         </div>
+    </div>
 
-        <div class="col-md-4">
-            <div class="cinema-card">
-                <span class="stat-pill mb-3">Seans CRUD</span>
-                <h3>Seans Yönetimi</h3>
-                <p class="text-muted">
-                    Film seanslarını, salonları, tarihleri ve bilet fiyatlarını yönet.
-                </p>
-                <a asp-controller="Sessions" asp-action="Index" class="btn btn-cinema-primary mt-3">
-                    Seanslara Git
-                </a>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="cinema-card">
-                <span class="stat-pill mb-3">Duyuru CRUD</span>
-                <h3>Duyuru Yönetimi</h3>
-                <p class="text-muted">
-                    Kullanıcı tarafında gösterilecek sinema duyurularını yönet.
-                </p>
-                <a asp-controller="Announcements" asp-action="Index" class="btn btn-cinema-primary mt-3">
-                    Duyurulara Git
-                </a>
-            </div>
+    <div class="col-md-4">
+        <div class="cinema-card">
+            <span class="stat-pill mb-3">Duyuru CRUD</span>
+            <h3>Duyuru Yönetimi</h3>
+            <p class="text-muted">
+                Kullanıcı tarafında gösterilecek sinema duyurularını yönet.
+            </p>
+            <a asp-controller="Announcements" asp-action="Index" class="btn btn-cinema-primary mt-3">
+                Duyurulara Git
+            </a>
         </div>
     </div>
 </div>

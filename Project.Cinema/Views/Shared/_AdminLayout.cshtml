@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - CineReserve Admin</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/cinema.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <a asp-controller="Home" asp-action="AdminPanel" class="admin-logo">
+                <span>🎬</span>
+                <strong>CineReserve</strong>
+                <small>Admin Panel</small>
+            </a>
+
+            <nav class="admin-menu">
+                <div class="admin-menu-title">Genel</div>
+
+                <a asp-controller="Home" asp-action="AdminPanel" class="admin-menu-link">
+                    <span>📊</span>
+                    Dashboard
+                </a>
+
+                <div class="admin-menu-title">Tablo Yönetimi</div>
+
+                <a asp-controller="Movies" asp-action="Index" class="admin-menu-link">
+                    <span>🎞️</span>
+                    <div>
+                        <strong>Filmler</strong>
+                        <small>Ekle / Düzenle / Sil</small>
+                    </div>
+                </a>
+
+                <a asp-controller="Sessions" asp-action="Index" class="admin-menu-link">
+                    <span>🕒</span>
+                    <div>
+                        <strong>Seanslar</strong>
+                        <small>Ekle / Düzenle / Sil</small>
+                    </div>
+                </a>
+
+                <a asp-controller="Announcements" asp-action="Index" class="admin-menu-link">
+                    <span>📢</span>
+                    <div>
+                        <strong>Duyurular</strong>
+                        <small>Ekle / Düzenle / Sil</small>
+                    </div>
+                </a>
+            </nav>
+
+            <div class="admin-sidebar-footer">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-cinema-outline w-100">
+                    Siteye Dön
+                </a>
+            </div>
+        </aside>
+
+        <section class="admin-content">
+            <header class="admin-topbar">
+                <div>
+                    <span class="admin-kicker">Yönetim Alanı</span>
+                    <h1>@ViewData["Title"]</h1>
+                </div>
+
+                <a asp-controller="Home" asp-action="Index" class="btn btn-cinema-primary">
+                    Çıkış
+                </a>
+            </header>
+
+            <main class="admin-main">
+                @RenderBody()
+            </main>
+        </section>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/custom.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
