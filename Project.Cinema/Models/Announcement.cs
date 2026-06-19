@@ -15,8 +15,7 @@ namespace Project.Cinema.Models
         [StringLength(700)]
         public string Content { get; set; }
 
-        [Required]
-        public DateTime PublishDate { get; set; }
+        public DateTime PublishDate { get; set; } = DateTime.Now;
 
         [Required]
         public bool IsActive { get; set; }

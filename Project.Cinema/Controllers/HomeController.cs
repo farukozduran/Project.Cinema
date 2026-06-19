@@ -19,5 +19,15 @@ namespace Project.Cinema.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult AdminLogin(string username, string password)
+        {
+            return RedirectToAction("AdminPanel");
+        }
+
+        public IActionResult AdminLogin()
+            return View();
+        }
     }
 }

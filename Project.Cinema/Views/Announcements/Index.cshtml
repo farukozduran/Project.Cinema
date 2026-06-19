@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Duyuru Yönetimi";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+        <div class="page-head mb-0">
+            <h1>Duyuru Yönetimi</h1>
+            <p>Sinema duyurularını AJAX ile listele, ekle, düzenle ve sil.</p>
+        </div>
+
+        <button type="button"
+                class="btn btn-cinema-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#announcementModal"
+                onclick="openAddAnnouncementModal()">
+            + Yeni Duyuru Ekle
+        </button>
+    </div>
+
+    <div class="card">
+        <div class="card-body table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>Başlık</th>
+                        <th>İçerik</th>
+                        <th>Yayın Tarihi</th>
+                        <th>Durum</th>
+                        <th class="text-end">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody id="announcementTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="announcementModal" tabindex="-1" aria-labelledby="announcementModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="announcementModalLabel" class="modal-title">Yeni Duyuru Ekle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+
+            <div class="modal-body">
+                <input type="hidden" id="announcementId" />
+
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <label class="form-label">Başlık</label>
+                        <input type="text" id="announcementTitle" class="form-control" placeholder="Örn: Hafta sonu indirimi" />
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label">İçerik</label>
+                        <textarea id="announcementContent" class="form-control" placeholder="Duyuru içeriği"></textarea>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Yayın Tarihi</label>
+                        <input type="date" id="publishDate" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Durum</label>
+                        <select id="isActive" class="form-select">
+                            <option value="true">Aktif</option>
+                            <option value="false">Pasif</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cinema-outline" data-bs-dismiss="modal">Kapat</button>
+                <button type="button" id="btnAddAnnouncement" class="btn btn-cinema-primary" onclick="addAnnouncement()">Kaydet</button>
+                <button type="button" id="btnUpdateAnnouncement" class="btn btn-warning" onclick="updateAnnouncement()" style="display:none;">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/announcements.js" asp-append-version="true"></script>
+}

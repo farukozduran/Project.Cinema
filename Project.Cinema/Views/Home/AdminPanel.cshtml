@@ -2,39 +2,48 @@
     ViewData["Title"] = "Admin Panel";
 }
 
-<div class="container py-5">
-    <div class="text-center mb-5">
-        <h1 class="fw-bold">Admin Panel</h1>
-        <p class="text-muted">Film, seans ve duyuru işlemlerini buradan yönetebilirsiniz.</p>
+<div class="container">
+    <div class="page-head">
+        <h1>Admin Panel</h1>
+        <p>Film, seans ve duyuru kayıtlarını AJAX/jQuery ile yönetin.</p>
     </div>
 
-    <div class="row g-4 justify-content-center">
+    <div class="row g-4">
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 text-center p-4">
-                <h4 class="fw-bold">Film Yönetimi</h4>
-                <p class="text-muted">Filmleri listele, ekle, düzenle ve sil.</p>
-                <a asp-controller="Movies" asp-action="Index" class="btn btn-dark">
+            <div class="cinema-card">
+                <span class="stat-pill mb-3">Film CRUD</span>
+                <h3>Film Yönetimi</h3>
+                <p class="text-muted">
+                    Filmleri listele, yeni film ekle, düzenle ve sil.
+                </p>
+                <a asp-controller="Movies" asp-action="Index" class="btn btn-cinema-primary mt-3">
                     Filmlere Git
                 </a>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 text-center p-4">
-                <h4 class="fw-bold">Seans Yönetimi</h4>
-                <p class="text-muted">Film seanslarını yönet.</p>
-                <a href="#" class="btn btn-outline-dark disabled">
-                    Yakında
+            <div class="cinema-card">
+                <span class="stat-pill mb-3">Seans CRUD</span>
+                <h3>Seans Yönetimi</h3>
+                <p class="text-muted">
+                    Film seanslarını, salonları, tarihleri ve bilet fiyatlarını yönet.
+                </p>
+                <a asp-controller="Sessions" asp-action="Index" class="btn btn-cinema-primary mt-3">
+                    Seanslara Git
                 </a>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100 text-center p-4">
-                <h4 class="fw-bold">Duyuru Yönetimi</h4>
-                <p class="text-muted">Sinema duyurularını yönet.</p>
-                <a href="#" class="btn btn-outline-dark disabled">
-                    Yakında
+            <div class="cinema-card">
+                <span class="stat-pill mb-3">Duyuru CRUD</span>
+                <h3>Duyuru Yönetimi</h3>
+                <p class="text-muted">
+                    Kullanıcı tarafında gösterilecek sinema duyurularını yönet.
+                </p>
+                <a asp-controller="Announcements" asp-action="Index" class="btn btn-cinema-primary mt-3">
+                    Duyurulara Git
                 </a>
             </div>
         </div>

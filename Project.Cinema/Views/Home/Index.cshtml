@@ -1,22 +1,39 @@
 ﻿@{
-    ViewData["Title"] = "Cinema Booking";
+    ViewData["Title"] = "Ana Sayfa";
 }
 
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-    <div class="card shadow-lg border-0 p-5 text-center" style="max-width: 600px; width: 100%; border-radius: 24px;">
-        <h1 class="fw-bold mb-3">Cinema Booking App</h1>
-        <p class="text-muted mb-5">
-            Film seanslarını görüntüleyin veya yönetim panelinden içerikleri düzenleyin.
-        </p>
+<section class="cinema-hero">
+    <div class="container">
+        <div class="hero-card">
+            <div class="hero-content">
+                <div class="hero-kicker">Cinema Booking System</div>
 
-        <div class="d-flex justify-content-center gap-3">
-            <a asp-controller="Home" asp-action="UserPanel" class="btn btn-dark btn-lg px-5">
-                User Girişi
-            </a>
+                <h1 class="hero-title">
+                    Film seanslarını keşfet, bilet listeni oluştur.
+                </h1>
 
-            <a asp-controller="Home" asp-action="AdminPanel" class="btn btn-outline-dark btn-lg px-5">
-                Admin Girişi
-            </a>
+                <p class="hero-text">
+                    CineReserve; film, seans ve duyuru yönetimi için hazırlanmış
+                    ASP.NET Core MVC, AJAX ve jQuery tabanlı modern bir sinema rezervasyon projesidir.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a asp-controller="Home" asp-action="UserPanel" class="btn btn-cinema-primary px-4 py-2">
+                        User Girişi
+                    </a>
+
+                    <a asp-controller="Home" asp-action="AdminPanel" class="btn btn-cinema-outline px-4 py-2">
+                        Admin Girişi
+                    </a>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <span class="stat-pill">AJAX CRUD</span>
+                    <span class="stat-pill">jQuery</span>
+                    <span class="stat-pill">SQL Server</span>
+                    <span class="stat-pill">Dark UI</span>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>

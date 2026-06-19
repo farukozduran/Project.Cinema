@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Seans Yönetimi";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+        <div class="page-head mb-0">
+            <h1>Seans Yönetimi</h1>
+            <p>Film seanslarını AJAX ile listele, ekle, düzenle ve sil.</p>
+        </div>
+
+        <button type="button"
+                class="btn btn-cinema-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#sessionModal"
+                onclick="openAddSessionModal()">
+            + Yeni Seans Ekle
+        </button>
+    </div>
+
+    <div class="card">
+        <div class="card-body table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>Film</th>
+                        <th>Salon</th>
+                        <th>Tarih</th>
+                        <th>Saat</th>
+                        <th>Bilet Fiyatı</th>
+                        <th>Boş Koltuk</th>
+                        <th class="text-end">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody id="sessionTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="sessionModal" tabindex="-1" aria-labelledby="sessionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="sessionModalLabel" class="modal-title">Yeni Seans Ekle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+
+            <div class="modal-body">
+                <input type="hidden" id="sessionId" />
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Film Adı</label>
+                        <input type="text" id="sessionMovieTitle" class="form-control" placeholder="Örn: Inception" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Salon Adı</label>
+                        <input type="text" id="hallName" class="form-control" placeholder="Örn: Salon A" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Seans Tarihi</label>
+                        <input type="date" id="sessionDate" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Seans Saati</label>
+                        <input type="time" id="sessionTime" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Bilet Fiyatı</label>
+                        <input type="number" id="ticketPrice" class="form-control" placeholder="Örn: 150" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Boş Koltuk Sayısı</label>
+                        <input type="number" id="emptySeatCount" class="form-control" placeholder="Örn: 42" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cinema-outline" data-bs-dismiss="modal">Kapat</button>
+                <button type="button" id="btnAddSession" class="btn btn-cinema-primary" onclick="addSession()">Kaydet</button>
+                <button type="button" id="btnUpdateSession" class="btn btn-warning" onclick="updateSession()" style="display:none;">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/sessions.js" asp-append-version="true"></script>
+}
